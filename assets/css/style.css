@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+body {
+    font-family: 'Ubuntu Mono', monospace;
+    background-color: #000024;
+}
+
+input {
+    width: 90px;
+    padding: .25em .5em;
+    border: none;
+    border-radius: .75rem;
+}
+
+img {
+    border-radius: 1rem;
+}
+
+.timer {
+    position: absolute;
+    top: 3rem;
+    right: 3rem;
+    display: inline-block;
+    font-family: 'Bebas Neue', cursive;
+    text-align: center;
+    letter-spacing: 2px;
+    color: #fff;
+    padding: .5em 1em;
+    border-radius: 1rem;
+    background-color: hsl(240, 54%, 15%);
+}
+
+.timer__part {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.timer__btn {
+    width: 2rem;
+    height: 2rem;
+    border-radius: .5rem;
+    border: none;
+    color: white;
+    background: hsl(273, 93%, 47%);
+    cursor: pointer;
+}
+
+.timer__btn--start {
+    background: #00b84c;
+}
+
+.timer__btn--stop {
+    background: #ff0256;
+}
+
+.slideshow-container {
+    max-width: 900px;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    margin: auto;
+}
+
+.mySlides {
+    display: none;
+    margin-bottom: 1rem;
+}
+
+.mySlides:first-child {
+    display: relative;
+    margin-bottom: 1rem;
+}
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: #7c7c9c;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: .5rem;
+    user-select: none;
+}
+
+.next {
+    right: -5rem;
+}
+
+.prev {
+    left: -5rem;
+}
+
+.prev:hover,
+.next:hover {
+    background-color: hsl(240, 54%, 15%);
+}
+
+.dots {
+    position: absolute;
+    bottom: -2rem;
+    right: 50%;
+    transform: translate(50%);
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 .5em;
+    background-color: #fff;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+    background-color: #7c7c9c;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
