@@ -3,18 +3,15 @@
 
 body {
     font-family: 'Ubuntu Mono', monospace;
-    background-color: #000024;
-}
-
-input {
-    width: 90px;
-    padding: .25em .5em;
-    border: none;
-    border-radius: .75rem;
+    background-color: hsl(240, 100%, 7%);
 }
 
 img {
     border-radius: 1rem;
+    width: clamp(120px, 50vw, 800px);
+    max-height: 560px;
+    margin: 0 auto;
+    object-fit: cover;
 }
 
 .timer {
@@ -47,30 +44,35 @@ img {
 }
 
 .timer__btn--start {
-    background: #00b84c;
+    background: hsl(145, 100%, 36%);
 }
 
 .timer__btn--stop {
-    background: #ff0256;
+    background: hsl(340, 100%, 50%);
+}
+
+.timer__btn--zero {
+    background: hsl(50, 100%, 50%);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .slideshow-container {
-    max-width: 900px;
-    position: absolute;
-    top: 50%;
-    right: 50%;
-    transform: translate(50%, -50%);
-    margin: auto;
+    position: relative;
 }
 
 .mySlides {
     display: none;
-    margin-bottom: 1rem;
 }
 
 .mySlides:first-child {
-    display: relative;
-    margin-bottom: 1rem;
+    display: inherit;
 }
 
 .prev,
@@ -78,9 +80,9 @@ img {
     cursor: pointer;
     position: absolute;
     top: 50%;
+    transform: translate(0, -50%);
     width: auto;
-    margin-top: -22px;
-    padding: 16px;
+    padding: 1em;
     color: #7c7c9c;
     font-weight: bold;
     font-size: 18px;
@@ -90,11 +92,11 @@ img {
 }
 
 .next {
-    right: -5rem;
+    right: -3rem;
 }
 
 .prev {
-    left: -5rem;
+    left: -3rem;
 }
 
 .prev:hover,
@@ -103,16 +105,15 @@ img {
 }
 
 .dots {
-    position: absolute;
-    bottom: -2rem;
-    right: 50%;
-    transform: translate(50%);
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
 }
 
 .dot {
     cursor: pointer;
-    height: 15px;
-    width: 15px;
+    height: 12px;
+    width: 12px;
     margin: 0 .5em;
     background-color: #fff;
     border-radius: 50%;
@@ -137,5 +138,25 @@ img {
 
     to {
         opacity: 1
+    }
+}
+
+.blink {
+    animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
+
+@media screen and (min-width: 560px) {
+    .next {
+        right: -5rem;
+    }
+
+    .prev {
+        left: -5rem;
     }
 }

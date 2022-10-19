@@ -1,6 +1,15 @@
 let slideIndex = 1;
 showSlides(slideIndex);
 
+document.addEventListener('keydown', function (event) {
+    if (event.keyCode == 37) {
+        plusSlides(-1)
+    }
+    else if (event.keyCode == 39) {
+        plusSlides(1)
+    }
+});
+
 function plusSlides(n) {
     showSlides(slideIndex += n);
 }
@@ -62,14 +71,19 @@ class Timer {
         });
 
         this.el.zero.addEventListener("click", () => {
-            inputMinutes= 0
+            inputMinutes = 0
 
             if (inputMinutes < 60) {
+                this.el.minutes.style.color = "#fff";
+                this.el.seconds.style.color = "#fff";
+                this.el.minutes.classList.remove("blink");
+                this.el.seconds.classList.remove("blink");
                 this.stop();
                 this.remainingSeconds = inputMinutes * 60;
                 this.updateInterfaceTime();
             }
         });
+
     }
 
     updateInterfaceTime() {
@@ -99,6 +113,13 @@ class Timer {
 
             if (this.remainingSeconds === 0) {
                 this.stop();
+            }
+
+            if ((this.remainingSeconds < 20)) {
+                this.el.minutes.style.color = "hsl(340, 100%, 50%)";
+                this.el.seconds.style.color = "hsl(340, 100%, 50%)";
+                this.el.minutes.classList.add("blink");
+                this.el.seconds.classList.add("blink");
             }
         }, 1000);
 
