@@ -115,7 +115,7 @@ class Timer {
                 this.stop();
             }
 
-            if ((this.remainingSeconds < 20)) {
+            if ((this.remainingSeconds < 60)) {
                 this.el.minutes.style.color = "hsl(340, 100%, 50%)";
                 this.el.seconds.style.color = "hsl(340, 100%, 50%)";
                 this.el.minutes.classList.add("blink");

@@ -8,10 +8,29 @@ body {
 
 img {
     border-radius: 1rem;
-    width: clamp(120px, 50vw, 800px);
-    max-height: 560px;
+    width: clamp(120px, 50vw, 700px);
+    max-height: 750px;
     margin: 0 auto;
+}
+
+#img1 {
     object-fit: cover;
+}
+
+#img2 {
+    object-fit: fill;
+}
+
+#img3 {
+    object-fit: cover;
+}
+
+video {
+    position: absolute;
+    bottom: 3rem;
+    right: 3rem;
+    max-width: 250px;
+    border-radius: 1rem;
 }
 
 .timer {
